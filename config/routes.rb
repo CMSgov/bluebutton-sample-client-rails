@@ -1,3 +1,19 @@
 Rails.application.routes.draw do
+  # Main demo landing page to perform initial authorization
+  get 'bluebutton_authorize', to: 'bbdemo#bluebutton_authorize', as: 'bluebutton_authorize'
+
+  # Bluebutton Oauth2 callback/redirect
+  get 'bluebutton_callback', to: 'bbdemo#bluebutton_callback', as: 'bluebutton_callback'
+
+  # Bluebutton endpoints demos 
+  get 'bluebutton_endpoints', to: 'bbdemo#bluebutton_endpoints', as: 'bluebutton_endpoints'
+
+  # Bluebutton endpoint: userinfo 
+  get 'bluebutton_endpoint_userinfo', to: 'bbdemo#bluebutton_endpoint_userinfo', as: 'bluebutton_endpoint_userinfo'
+
+  resources :applications
+
+  root 'bbdemo#bluebutton_authorize'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
