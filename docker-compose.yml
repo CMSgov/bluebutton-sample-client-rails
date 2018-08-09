@@ -9,3 +9,5 @@ services:
       - .:/code
     ports:
       - "3000:3000"
+    env_file:
+      - web-variables.env
