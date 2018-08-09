@@ -1,0 +1,32 @@
+# COPY this file to config/local_env.yml
+# Add application settings and API keys here.
+# This file should be listed in .gitignore to keep your settings secret!
+# Settings can be referenced in the application via the LOCAL_ENV variable.
+#    For example, to reference the client id:   LOCAL_ENV["BB_CLIENT_ID"]
+development:
+  BB_CLIENT_ID: "<enter client id here>"
+  BB_CLIENT_SECRET: "<enter client secret here>"
+  # Callback handler URL:
+  BB_REDIRECT_URI: "http://localhost:3000/bluebutton_callback"
+  # Authorization endpoint:
+  BB_AUTHORIZE_URL: "https://sandbox.bluebutton.cms.gov/v1/o/authorize/"
+  # Exchange code for Token endpoint:
+  BB_TOKEN_URL: "https://sandbox.bluebutton.cms.gov/v1/o/token/"
+  # Base Bluebutton site path:
+  BB_BASE_URL: "https://sandbox.bluebutton.cms.gov"
+
+production:
+  BB_CLIENT_ID: "<enter client id here>"
+  BB_CLIENT_SECRET: "<enter client secret here>"
+  BB_REDIRECT_URI: "http://localhost:3000/bluebutton_callback"
+  BB_AUTHORIZE_URL: ""
+  BB_TOKEN_URL: ""
+  BB_BASE_URL: ""
+
+test:
+  BB_CLIENT_ID: "<enter client id here>"
+  BB_CLIENT_SECRET: "<enter client secret here>"
+  BB_REDIRECT_URI: "http://localhost:3000/bluebutton_callback"
+  BB_AUTHORIZE_URL: ""
+  BB_TOKEN_URL: ""
+  BB_BASE_URL: ""
