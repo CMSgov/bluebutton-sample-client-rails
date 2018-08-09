@@ -1,0 +1,27 @@
+<h1> <b>Bluebutton API Endpoints</b></h1>
+
+<h2><u>Patient ID:  <%= session[:bb_patient_id] %> </u></h2>
+
+<h3><%= link_to 'Click to return to the authorization page.',  root_path %></h3>
+
+<h2>Choose one of the following API endpoint links to demo results:</h2>
+
+<h3>
+<table border="1">
+  <tr>
+    <th>Description</th>
+    <th>LINK</th>
+  </tr>
+
+  <tr>
+    <td>Returns name and email information for patient.</td>
+    <td><%= link_to 'UserInfo',  bluebutton_endpoint_userinfo_path %></td>
+  </tr>
+
+  <tr>
+    <td>next1</td>
+    <td>next1</td>
+  </tr>
+
+</table>
+</h3>
