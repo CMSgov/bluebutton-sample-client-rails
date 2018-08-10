@@ -3,7 +3,7 @@ Blue Button Sample Client Application - Rails Version
 
 ## Introduction
 
-This client demonstrates authenticating to the Blue Buttom API and subsequent FHIR API calls.
+This client demonstrates authenticating to the Blue Button API and subsequent FHIR API calls.
 It demonstrates the OAuth2 Server Side web application flow where a `client_secret` is used.
 
 This client is built using the Ruby on Rails web application framework. 
@@ -20,7 +20,7 @@ The goal of this demo is to provide examples of the technical interaction with t
 include other aspects, such as styling or a user management framework. 
 
 The application is in active development so check back often for updates.
-Please consider improving this code with your contributions. Pull requests welcome ;)
+Please consider improving this code with your contributions. Pull requests welcome ;) 
 
 ## Prerequisite DOCKER Software Requirement
 
