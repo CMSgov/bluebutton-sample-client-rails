@@ -91,7 +91,7 @@ Any time you want to start the Rails server container use the following command:
 
 Any time you want to gracefully stop the Rails server container use the following command:
 
-    docker-compose up
+    docker-compose down
     
 ### Final Step
 
