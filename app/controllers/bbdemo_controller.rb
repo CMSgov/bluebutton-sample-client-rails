@@ -33,4 +33,10 @@ class BbdemoController < ApplicationController
     bluebutton_oauth_service.restore_access_token
     @bb_response = bluebutton_oauth_service.bb_get_patient(session[:bb_patient_id])
   end
+
+  def bluebutton_endpoint_eob
+    bluebutton_oauth_service = BluebuttonOauthService.new(session[:bb_acc_token],session[:bb_state])
+    bluebutton_oauth_service.restore_access_token
+    @bb_response = bluebutton_oauth_service.bb_get_eob(session[:bb_patient_id])
+  end
 end
