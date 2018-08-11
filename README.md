@@ -8,16 +8,16 @@ It demonstrates the OAuth2 Server Side web application flow where a `client_secr
 
 This client is built using the Ruby on Rails web application framework. 
 
-The 'oauth2' Ruby Gem is used for OAuth 2.0 client functions.
+The 'oauth2' Ruby Gem is used for OAuth 2.0 client methods.
 
-Docker is used to containerize (or virtualize) the Rails web application server.
+Docker is used to containerize the Rails web application server.
 
 ## Status and Contributing
 
 This demo app is still a work in progress! 
 
 The goal of this demo is to provide examples of the technical interaction with the Bluebutton API. So it doesn't
-include other aspects, such as styling or a user management framework. 
+include other aspects, such as styling, user management framework or full error handling. 
 
 The application is in active development so check back often for updates.
 Please consider improving this code with your contributions. Pull requests welcome ;) 
@@ -28,7 +28,7 @@ This demo utilizes DOCKER (docker-compose) with the goal of being compatible wit
 
 Please follow the information at the following link for installation instructions: https://docs.docker.com/compose/install/
 
-NOTE: If using a Linux, your distro may have packages available to install instead. For example, for Fedora you can run the following command to install:
+NOTE: If using Linux, your distro may have packages available to install instead. For example, for Fedora you can run the following command to install:
 
     dnf install docker-compose
 
@@ -42,7 +42,7 @@ On RedHat this would be:
     git clone https://github.com/CMSgov/bluebutton-sample-client-rails.git
     cd bluebutton-sample-client-rails 
 
-## Setting up a Sandbox Application
+## Setting Up a Sandbox Application
 
 To run this demo application, you will need to signup for a developer account
 at our https://sandbox.bluebutton.cms.gov/ site.
@@ -63,7 +63,7 @@ here, you can fill out the form with the following options:
 Once you submit the form, you should receive an application key and secret that
 can be be added to the local_env.yml file in the next step.
 
-## Configuring the Client Side ENV settings in the local_env.yml file.
+## Configuring the Client Side ENV Settings
 
 Run the following commands to copy the sample configuration file:
 
