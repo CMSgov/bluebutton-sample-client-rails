@@ -39,6 +39,10 @@ class BbdemoController < ApplicationController
     bluebutton_oauth_service.restore_access_token
     @bb_response = bluebutton_oauth_service.bb_get_eob(session[:bb_patient_id])
   end
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c0da3a7... Add coverage, oidc discovery, and FHIR metadata calls
 
   def bluebutton_endpoint_coverage
     bluebutton_oauth_service = BluebuttonOauthService.new(session[:bb_acc_token],session[:bb_state])
@@ -57,4 +61,9 @@ class BbdemoController < ApplicationController
     bluebutton_oauth_service.restore_access_token
     @bb_response = bluebutton_oauth_service.bb_get_fhirmeta
   end
+<<<<<<< HEAD
+=======
+>>>>>>> ab2d7f7... Add ExplanationOfBenefit endpoing call. Will add paging later
+=======
+>>>>>>> c0da3a7... Add coverage, oidc discovery, and FHIR metadata calls
 end
