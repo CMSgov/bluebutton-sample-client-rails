@@ -17,10 +17,6 @@ Rails.application.routes.draw do
   # Bluebutton endpoint: eob = Explanation of Benefit 
   get 'bluebutton_endpoint_eob', to: 'bbdemo#bluebutton_endpoint_eob', as: 'bluebutton_endpoint_eob'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c0da3a7... Add coverage, oidc discovery, and FHIR metadata calls
   # Bluebutton endpoint: Coverage  
   get 'bluebutton_endpoint_coverage', to: 'bbdemo#bluebutton_endpoint_coverage', as: 'bluebutton_endpoint_coverage'
 
@@ -30,11 +26,6 @@ Rails.application.routes.draw do
   # Bluebutton endpoint: FHIR Metadata 
   get 'bluebutton_endpoint_fhirmeta', to: 'bbdemo#bluebutton_endpoint_fhirmeta', as: 'bluebutton_endpoint_fhirmeta'
 
-<<<<<<< HEAD
-=======
->>>>>>> ab2d7f7... Add ExplanationOfBenefit endpoing call. Will add paging later
-=======
->>>>>>> c0da3a7... Add coverage, oidc discovery, and FHIR metadata calls
   resources :applications
 
   root 'bbdemo#bluebutton_authorize'
