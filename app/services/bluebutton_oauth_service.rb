@@ -95,6 +95,10 @@ class BluebuttonOauthService
     JSON.parse(response_json)
   end
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c0da3a7... Add coverage, oidc discovery, and FHIR metadata calls
   def bb_get_coverage(patient_id)
     response_json = @access_token.get("/v1/fhir/Coverage/?beneficiary=#{patient_id}").body
     JSON.parse(response_json)
@@ -109,6 +113,11 @@ class BluebuttonOauthService
     response_json = @access_token.get('/v1/fhir/metadata').body
     JSON.parse(response_json)
   end
+<<<<<<< HEAD
+=======
+>>>>>>> ab2d7f7... Add ExplanationOfBenefit endpoing call. Will add paging later
+=======
 
+>>>>>>> c0da3a7... Add coverage, oidc discovery, and FHIR metadata calls
 end
 
