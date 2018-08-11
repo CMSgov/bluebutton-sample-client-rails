@@ -79,6 +79,14 @@ application's client id and secret:
 
 ## Startup the Rails application server with in a Docker container.
 
+Startup the Docker daemon per instructions for your operating system. Most linux distributions will use systemctl or service commands as root. This only needs to be run once per system boot. You can also place this in your system's startup/boot configuration to start automatically.
+
+    # For systemctl:
+        $ sudo systemctl start docker
+
+    # For service:
+        $ sudo service docker start
+
 Enter the following command to build the docker image. This only needs to be run once or when
 making certain types of changes to the application code.
 
