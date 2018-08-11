@@ -14,23 +14,33 @@
   </tr>
 
   <tr>
-    <td>Returns name and email information for patient</td>
+    <td>Name and email information for patient</td>
     <td><%= link_to 'UserInfo',  bluebutton_endpoint_userinfo_path %></td>
   </tr>
 
   <tr>
-    <td>Returns detailed information for patient</td>
+    <td>Detailed information for patient</td>
     <td><%= link_to 'Patient',  bluebutton_endpoint_patient_path %></td>
   </tr>
 
   <tr>
-    <td>Returns Explanation of Benefit information for patient</td>
+    <td>Explanation of benefit information for patient</td>
     <td><%= link_to 'ExplanationOfBenefit',  bluebutton_endpoint_eob_path %></td>
   </tr>
 
   <tr>
-    <td>next1</td>
-    <td>next1</td>
+    <td>Coverage information for patient</td>
+    <td><%= link_to 'Coverage',  bluebutton_endpoint_coverage_path %></td>
+  </tr>
+
+  <tr>
+    <td>OIDC Discovery</td>
+    <td><%= link_to 'OIDC_Disc',  bluebutton_endpoint_oidc_path %></td>
+  </tr>
+
+  <tr>
+    <td>FHIR Metadata</td>
+    <td><%= link_to 'FHIR_Meta',  bluebutton_endpoint_fhirmeta_path %></td>
   </tr>
 
 </table>
