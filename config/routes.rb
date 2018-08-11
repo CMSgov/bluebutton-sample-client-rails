@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # Bluebutton endpoint: userinfo 
   get 'bluebutton_endpoint_userinfo', to: 'bbdemo#bluebutton_endpoint_userinfo', as: 'bluebutton_endpoint_userinfo'
 
+  # Bluebutton endpoint: patient
+  get 'bluebutton_endpoint_patient', to: 'bbdemo#bluebutton_endpoint_patient', as: 'bluebutton_endpoint_patient'
+
   resources :applications
 
   root 'bbdemo#bluebutton_authorize'

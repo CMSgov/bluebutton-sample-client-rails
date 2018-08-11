@@ -85,5 +85,10 @@ class BluebuttonOauthService
     JSON.parse(response_json)
   end
 
+  def bb_get_patient(patient_id)
+    response_json = @access_token.get("/v1/fhir/Patient/#{patient_id}").body
+    JSON.parse(response_json)
+  end
+
 end
 
