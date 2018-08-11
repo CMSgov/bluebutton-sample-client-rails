@@ -85,5 +85,30 @@ class BluebuttonOauthService
     JSON.parse(response_json)
   end
 
+  def bb_get_patient(patient_id)
+    response_json = @access_token.get("/v1/fhir/Patient/#{patient_id}").body
+    JSON.parse(response_json)
+  end
+
+  def bb_get_eob(patient_id)
+    response_json = @access_token.get("/v1/fhir/ExplanationOfBenefit/?patient=#{patient_id}").body
+    JSON.parse(response_json)
+  end
+
+  def bb_get_coverage(patient_id)
+    response_json = @access_token.get("/v1/fhir/Coverage/?beneficiary=#{patient_id}").body
+    JSON.parse(response_json)
+  end
+
+  def bb_get_oidc
+	  response_json = @access_token.get('/.well-known/openid-configuration').body
+    JSON.parse(response_json)
+  end
+
+  def bb_get_fhirmeta
+    response_json = @access_token.get('/v1/fhir/metadata').body
+    JSON.parse(response_json)
+  end
+
 end
 
