@@ -72,7 +72,9 @@ class BluebuttonOauthService
 
   def refresh_access_token
     restore_access_token unless @access_token
-    @access_token = @access_token.refresh!
+    if !@access_token
+      @access_token = @access_token.refresh!
+    end
     @serialized_access_token = @access_token.to_hash.to_json
     @bb_acc_token = @serialized_access_token
     nil
