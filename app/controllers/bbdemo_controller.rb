@@ -4,6 +4,9 @@ class BbdemoController < ApplicationController
   def bluebutton_authorize
     # Change state param on every authorize
     change_session_bb_state
+    # Setup oauth2 client service
+    @bluebutton_oauth_service = BluebuttonOauthService.new(session[:bb_acc_token],session[:bb_state])
+
   end
 
   # Handler for Bluebutton authorization redirect/callback
