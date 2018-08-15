@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   # Bluebutton endpoint: FHIR Metadata 
   get 'bluebutton_endpoint_fhirmeta', to: 'bbdemo#bluebutton_endpoint_fhirmeta', as: 'bluebutton_endpoint_fhirmeta'
 
+  # Bluebutton endpoint: getpage (for JSON responses with paging links)
+  get 'bluebutton_endpoint_getpage', to: 'bbdemo#bluebutton_endpoint_getpage', as: 'bluebutton_endpoint_getpage'
+
   resources :applications
 
   root 'bbdemo#bluebutton_authorize'

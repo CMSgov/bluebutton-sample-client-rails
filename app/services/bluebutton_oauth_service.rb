@@ -109,4 +109,10 @@ class BluebuttonOauthService
     response_json = @access_token.get('/v1/fhir/metadata').body
     JSON.parse(response_json)
   end
+
+  # GET for full url's referenced in JSON response ("link") for paging.
+  def bb_get_page(url)
+    response_json = @access_token.get(url).body
+    JSON.parse(response_json)
+  end
 end
