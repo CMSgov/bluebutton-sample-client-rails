@@ -1,6 +1,10 @@
 class BbdemoController < ApplicationController
   before_action :bluebutton_oauth_service_check
 
+  def self.endpoint_title
+    @@endpoint_title
+  end
+
   def bluebutton_authorize
     # Change state param on every authorize
     change_session_bb_state
@@ -19,44 +23,43 @@ class BbdemoController < ApplicationController
   end
 
   def bluebutton_endpoints
-    session[:bb_endpoint_title] = ""
     # Get and save patient id for page displays
     @bb_acc_token_json = JSON.parse(session[:bb_acc_token])
     session[:bb_patient_id] = @bb_acc_token_json['patient']
   end
 
   def bluebutton_endpoint_userinfo
-    session[:bb_endpoint_title] = "User Info"
+    @@endpoint_title = "User Info"
     @bb_response = @bluebutton_oauth_service.bb_get_userinfo
     render('bluebutton_endpoint_result')
   end
 
   def bluebutton_endpoint_patient
-    session[:bb_endpoint_title] = "Patient Information"
+    @@endpoint_title = "Patient Information"
     @bb_response = @bluebutton_oauth_service.bb_get_patient(session[:bb_patient_id])
     render('bluebutton_endpoint_result')
   end
 
   def bluebutton_endpoint_eob
-    session[:bb_endpoint_title] = "Explanation Of Benefit"
+    @@endpoint_title = "Explanation Of Benefit"
     @bb_response = @bluebutton_oauth_service.bb_get_eob(session[:bb_patient_id])
     render('bluebutton_endpoint_result')
   end
 
   def bluebutton_endpoint_coverage
-    session[:bb_endpoint_title] = "Coverage"
+    @@endpoint_title = "Coverage"
     @bb_response = @bluebutton_oauth_service.bb_get_coverage(session[:bb_patient_id])
     render('bluebutton_endpoint_result')
   end
 
   def bluebutton_endpoint_oidc
-    session[:bb_endpoint_title] = "OIDC Discovery"
+    @@endpoint_title = "OIDC Discovery"
     @bb_response = @bluebutton_oauth_service.bb_get_oidc
     render('bluebutton_endpoint_result')
   end
 
   def bluebutton_endpoint_fhirmeta
-    session[:bb_endpoint_title] = "FHIR Metadata"
+    @@endpoint_title = "FHIR Metadata"
     @bb_response = @bluebutton_oauth_service.bb_get_fhirmeta
     render('bluebutton_endpoint_result')
   end

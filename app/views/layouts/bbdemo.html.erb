@@ -20,7 +20,7 @@
         <div> Navigate Pages:
           <% links = @bb_response["link"] %>
           <% links.each do |lnk| %>
-		<button><%= link_to lnk["relation"], bluebutton_endpoint_getpage_path(:page_url => lnk["url"]) %></button>
+		  <button><%= link_to lnk["relation"], bluebutton_endpoint_getpage_path(:page_url => lnk["url"]) %></button>
           <% end %>
         </div>
       <% end %>
