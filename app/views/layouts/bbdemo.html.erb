@@ -11,24 +11,5 @@
 
   <body>
     <%= yield %>
-
-    <% if !@bb_response.blank? %>
-
-      <% if @bb_response["link"] != nil %>
-        <div> Total Resources =  <%= @bb_response["total"] %> </div>
-
-        <div> Navigate Pages:
-          <% links = @bb_response["link"] %>
-          <% links.each do |lnk| %>
-		  <button><%= link_to lnk["relation"], bluebutton_endpoint_getpage_path(:page_url => lnk["url"]) %></button>
-          <% end %>
-        </div>
-      <% end %>
-
-      <h2>JSON Results:</h2>
-      <pre><%= JSON.pretty_generate(@bb_response) %></pre>
-
-    <% end %>
-
   </body>
 </html>
