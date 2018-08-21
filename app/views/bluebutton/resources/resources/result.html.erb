@@ -1,0 +1,23 @@
+<h1> <%= @resource_title %></h1>
+
+<h2><u> Patient ID: <%= session[:bb_patient_id] %></u></h2>
+
+<h3><%= link_to 'Click to return to the resources demo page.',  bluebutton_main_path %></h3>
+
+    <% if !@bb_response.blank? %>
+
+      <% if @bb_response["link"] != nil %>
+        <div> Total Resources =  <%= @bb_response["total"] %> </div>
+
+        <div> Navigate Pages:
+          <% links = @bb_response["link"] %>
+          <% links.each do |lnk| %>
+		  <button><%= link_to lnk["relation"], bluebutton_resources_get_resource_path(:page_url => lnk["url"],:resource_title => @resource_title) %></button>
+          <% end %>
+        </div>
+      <% end %>
+
+      <h2>JSON Results:</h2>
+      <pre><%= JSON.pretty_generate(@bb_response) %></pre>
+
+    <% end %>

@@ -72,46 +72,16 @@ class BluebuttonOauthService
 
   def refresh_access_token
     restore_access_token unless @access_token
-    @access_token = @access_token.refresh!
+    if !@access_token
+      @access_token = @access_token.refresh!
+    end
     @serialized_access_token = @access_token.to_hash.to_json
     @bb_acc_token = @serialized_access_token
     nil
   end
 
-  # Endpoint methods:
-
-  def bb_get_userinfo
-    response_json = @access_token.get('/v1/connect/userinfo').body
-    JSON.parse(response_json)
-  end
-
-  def bb_get_patient(patient_id)
-    response_json = @access_token.get("/v1/fhir/Patient/#{patient_id}").body
-    JSON.parse(response_json)
-  end
-
-  def bb_get_eob(patient_id)
-    response_json = @access_token.get("/v1/fhir/ExplanationOfBenefit/?patient=#{patient_id}").body
-    JSON.parse(response_json)
-  end
-
-  def bb_get_coverage(patient_id)
-    response_json = @access_token.get("/v1/fhir/Coverage/?beneficiary=#{patient_id}").body
-    JSON.parse(response_json)
-  end
-
-  def bb_get_oidc
-	  response_json = @access_token.get('/.well-known/openid-configuration').body
-    JSON.parse(response_json)
-  end
-
-  def bb_get_fhirmeta
-    response_json = @access_token.get('/v1/fhir/metadata').body
-    JSON.parse(response_json)
-  end
-
-  # GET for full url's referenced in JSON response ("link") for paging.
-  def bb_get_page(url)
+  # Resource method:
+  def get_resource(url)
     response_json = @access_token.get(url).body
     JSON.parse(response_json)
   end

@@ -3,28 +3,27 @@ Blue Button Sample Client Application - Rails Version
 
 ## Introduction
 
-This client demonstrates authenticating to the Blue Button API and subsequent FHIR API calls.
+This client demonstrates authenticating to the [Blue Button API](https://bluebutton.cms.gov/) and subsequent FHIR API calls.
 It demonstrates the OAuth2 Server Side web application flow where a `client_secret` is used.
 
-This client is built using the Ruby on Rails web application framework. 
+This client is built using the [Ruby on Rails](https://rubyonrails.org/) web application framework. 
 
-The 'oauth2' Ruby Gem is used for OAuth 2.0 client methods.
+The ['oauth2'](https://rubygems.org/gems/oauth2/versions/1.2.0) Ruby Gem is used for OAuth 2.0 client methods.
 
-Docker is used to containerize the Rails web application server.
+[Docker](https://www.docker.com/) is used to containerize the [Rails](https://rubyonrails.org/) web application server.
 
 ## Status and Contributing
 
 This demo app is still a work in progress! 
 
-The goal of this demo is to provide examples of the technical interaction with the Bluebutton API. So it doesn't
-include other aspects, such as styling, user management framework or full error handling. 
+The goal of this demo is to provide examples of the technical interaction with the [Blue Button API](https://bluebutton.cms.gov/).
 
 The application is in active development so check back often for updates.
 Please consider improving this code with your contributions. Pull requests welcome ;) 
 
-## Prerequisite DOCKER Software Requirement
+## Prerequisite [Docker](https://www.docker.com/) Software Requirement
 
-This demo utilizes DOCKER (docker-compose) with the goal of being compatible with different platforms and operating systems. 
+This demo utilizes [docker-compose](https://docs.docker.com/compose/) with the goal of being compatible with different platforms and operating systems. 
 
 Please follow the information at the following link for installation instructions: https://docs.docker.com/compose/install/
 
@@ -58,7 +57,7 @@ here, you can fill out the form with the following options:
     Name: [your choice]
     Client type: Confidential
     Authorization grant type: Authorization Code
-    Redirect uris: http://localhost:3000/bluebutton_callback/
+    Redirect uris: http://localhost:3000/bluebutton/callback
 
 Once you submit the form, you should receive an application key and secret that
 can be be added to the local_env.yml file in the next step.
@@ -77,9 +76,9 @@ application's client id and secret:
     BB_CLIENT_SECRET: "<enter client secret here>"
 
 
-## Startup the Rails application server with in a Docker container.
+## Startup the [Rails](https://rubyonrails.org/) application server with in a [Docker](https://www.docker.com/) container.
 
-Startup the Docker daemon per instructions for your operating system. Most linux distributions will use systemctl or service commands as root. This only needs to be run once per system boot. You can also place this in your system's startup/boot configuration to start automatically.
+Startup the [Docker](https://www.docker.com/) daemon per instructions for your operating system. Most linux distributions will use systemctl or service commands as root. This only needs to be run once per system boot. You can also place this in your system's startup/boot configuration to start automatically.
 
     # For systemctl:
         $ sudo systemctl start docker
@@ -87,17 +86,12 @@ Startup the Docker daemon per instructions for your operating system. Most linux
     # For service:
         $ sudo service docker start
 
-Enter the following command to build the docker image. This only needs to be run once or when
-making certain types of changes to the application code.
-
-    docker-compose build
-
-Any time you want to start the Rails server container use the following command:
+Any time you want to start the [Rails](https://rubyonrails.org/) server container use the following command:
 
     docker-compose up
 
 
-Any time you want to gracefully stop the Rails server container use the following command:
+Any time you want to gracefully stop the [Rails](https://rubyonrails.org/) server container use the following command:
 
     docker-compose down
     

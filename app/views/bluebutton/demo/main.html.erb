@@ -1,10 +1,10 @@
-<h1> <b>Blue Button API Endpoints</b></h1>
+<h1> <b>Blue Button API Resources</b></h1>
 
 <h2><u>Patient ID:  <%= session[:bb_patient_id] %> </u></h2>
 
 <h3><%= link_to 'Click to return to the authorization page.',  root_path %></h3>
 
-<h2>Choose one of the following API endpoint links to demo results:</h2>
+<h2>Choose one of the following API resource links to demo the results:</h2>
 
 <h3>
 <table border="1">
@@ -15,32 +15,32 @@
 
   <tr>
     <td>Name and email information for patient</td>
-    <td><%= link_to 'UserInfo',  bluebutton_endpoint_userinfo_path %></td>
+    <td><%= link_to 'UserInfo',  bluebutton_resources_userinfo_path %></td>
   </tr>
 
   <tr>
     <td>Detailed information for patient</td>
-    <td><%= link_to 'Patient',  bluebutton_endpoint_patient_path %></td>
+    <td><%= link_to 'Patient',  bluebutton_resources_patient_path %></td>
   </tr>
 
   <tr>
     <td>Explanation of benefit information for patient</td>
-    <td><%= link_to 'ExplanationOfBenefit',  bluebutton_endpoint_eob_path %></td>
+    <td><%= link_to 'ExplanationOfBenefit',  bluebutton_resources_eob_path %></td>
   </tr>
 
   <tr>
     <td>Coverage information for patient</td>
-    <td><%= link_to 'Coverage',  bluebutton_endpoint_coverage_path %></td>
+    <td><%= link_to 'Coverage',  bluebutton_resources_coverage_path %></td>
   </tr>
 
   <tr>
     <td>OIDC Discovery</td>
-    <td><%= link_to 'OIDC_Disc',  bluebutton_endpoint_oidc_path %></td>
+    <td><%= link_to 'OIDC_Disc',  bluebutton_resources_oidc_path %></td>
   </tr>
 
   <tr>
     <td>FHIR Metadata</td>
-    <td><%= link_to 'FHIR_Meta',  bluebutton_endpoint_fhirmeta_path %></td>
+    <td><%= link_to 'FHIR_Meta',  bluebutton_resources_fhirmeta_path %></td>
   </tr>
 
 </table>

@@ -1,37 +1,45 @@
 Rails.application.routes.draw do
-  # Main demo landing page to perform initial authorization
-  get 'bluebutton_authorize', to: 'bbdemo#bluebutton_authorize', as: 'bluebutton_authorize'
 
-  # Bluebutton Oauth2 callback/redirect
-  get 'bluebutton_callback', to: 'bbdemo#bluebutton_callback', as: 'bluebutton_callback'
+  namespace :bluebutton do
+    # Main demo landing page to perform initial authorization
+    #get 'authorize', to: 'demo#authorize', as: 'authorize'
+    get 'authorize', to: 'demo#authorize', as: 'authorize'
 
-  # Bluebutton endpoints demos 
-  get 'bluebutton_endpoints', to: 'bbdemo#bluebutton_endpoints', as: 'bluebutton_endpoints'
+    # Oauth2 callback/redirect
+    #get 'callback', to: 'demo#callback', as: 'callback'
+    get 'callback', to: 'demo#callback', as: 'callback'
 
-  # Bluebutton endpoint: userinfo 
-  get 'bluebutton_endpoint_userinfo', to: 'bbdemo#bluebutton_endpoint_userinfo', as: 'bluebutton_endpoint_userinfo'
+    # Main demo page after auth with resource demo links
+    #get 'main', to: 'demo#main', as: 'main'
+    get 'main', to: 'demo#main', as: 'main'
 
-  # Bluebutton endpoint: patient
-  get 'bluebutton_endpoint_patient', to: 'bbdemo#bluebutton_endpoint_patient', as: 'bluebutton_endpoint_patient'
+    namespace :resources do
+      # Bluebutton resource: userinfo 
+      get 'userinfo', to: 'resources#userinfo', as: 'userinfo'
 
-  # Bluebutton endpoint: eob = Explanation of Benefit 
-  get 'bluebutton_endpoint_eob', to: 'bbdemo#bluebutton_endpoint_eob', as: 'bluebutton_endpoint_eob'
+      # Bluebutton resource: patient
+      get 'patient', to: 'resources#patient', as: 'patient'
 
-  # Bluebutton endpoint: Coverage  
-  get 'bluebutton_endpoint_coverage', to: 'bbdemo#bluebutton_endpoint_coverage', as: 'bluebutton_endpoint_coverage'
+      # Bluebutton resource: eob = Explanation of Benefit 
+      get 'eob', to: 'resources#eob', as: 'eob'
 
-  # Bluebutton endpoint: OIDC Discovery 
-  get 'bluebutton_endpoint_oidc', to: 'bbdemo#bluebutton_endpoint_oidc', as: 'bluebutton_endpoint_oidc'
+      # Bluebutton resource: Coverage  
+      get 'coverage', to: 'resources#coverage', as: 'coverage'
 
-  # Bluebutton endpoint: FHIR Metadata 
-  get 'bluebutton_endpoint_fhirmeta', to: 'bbdemo#bluebutton_endpoint_fhirmeta', as: 'bluebutton_endpoint_fhirmeta'
+      # Bluebutton resource: OIDC Discovery 
+      get 'oidc', to: 'resources#oidc', as: 'oidc'
 
-  # Bluebutton endpoint: getpage (for JSON responses with paging links)
-  get 'bluebutton_endpoint_getpage', to: 'bbdemo#bluebutton_endpoint_getpage', as: 'bluebutton_endpoint_getpage'
+      # Bluebutton resource: FHIR Metadata 
+      get 'fhirmeta', to: 'resources#fhirmeta', as: 'fhirmeta'
 
+      # Bluebutton resource: get_resource (for JSON responses with paging links)
+      get 'get_resource', to: 'resources#get_resource', as: 'get_resource'
+
+    end
+  end
   resources :applications
 
-  root 'bbdemo#bluebutton_authorize'
+  root 'bluebutton/demo#authorize'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
