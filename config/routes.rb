@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       # Bluebutton resource: FHIR Metadata 
       get 'fhirmeta', to: 'resources#fhirmeta', as: 'fhirmeta'
 
-      # Bluebutton resource: getpage (for JSON responses with paging links)
+      # Bluebutton resource: get_resource (for JSON responses with paging links)
       get 'get_resource', to: 'resources#get_resource', as: 'get_resource'
 
     end

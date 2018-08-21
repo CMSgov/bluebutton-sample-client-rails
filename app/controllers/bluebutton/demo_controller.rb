@@ -19,7 +19,7 @@ class Bluebutton::DemoController < ApplicationController
   end
 
   def main
-    # Get and save patient id for page displays
+    # Get and save patient id for page display
     @bb_acc_token_json = JSON.parse(session[:bb_acc_token])
     session[:bb_patient_id] = @bb_acc_token_json['patient']
   end
