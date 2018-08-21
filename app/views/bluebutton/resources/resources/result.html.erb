@@ -1,8 +1,8 @@
-<h1> <%= BbdemoController.endpoint_title %></h1>
+<h1> <%= @resource_title %></h1>
 
 <h2><u> Patient ID: <%= session[:bb_patient_id] %></u></h2>
 
-<h3><%= link_to 'Click to return to the endpoints page.',  bluebutton_endpoints_path %></h3>
+<h3><%= link_to 'Click to return to the resources demo page.',  bluebutton_main_path %></h3>
 
     <% if !@bb_response.blank? %>
 
@@ -12,7 +12,7 @@
         <div> Navigate Pages:
           <% links = @bb_response["link"] %>
           <% links.each do |lnk| %>
-                  <button><%= link_to lnk["relation"], bluebutton_endpoint_getpage_path(:page_url => lnk["url"]) %></button>
+		  <button><%= link_to lnk["relation"], bluebutton_resources_get_resource_path(:page_url => lnk["url"],:resource_title => @resource_title) %></button>
           <% end %>
         </div>
       <% end %>

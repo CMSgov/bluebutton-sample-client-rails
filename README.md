@@ -57,7 +57,7 @@ here, you can fill out the form with the following options:
     Name: [your choice]
     Client type: Confidential
     Authorization grant type: Authorization Code
-    Redirect uris: http://localhost:3000/bluebutton_callback/
+    Redirect uris: http://localhost:3000/bluebutton/callback
 
 Once you submit the form, you should receive an application key and secret that
 can be be added to the local_env.yml file in the next step.

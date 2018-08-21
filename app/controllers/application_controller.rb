@@ -1,7 +1,17 @@
 class ApplicationController < ActionController::Base
   require 'bluebutton_oauth_service'
 
-  #bluebutton_oauth_service = BluebuttonOauthService.new(nil,nil)
+#  @@resource_title = 'Resource Title'
+#
+#  # Remember resource title for result template
+#  def self.resource_title
+#    @@resource_title
+#  end
+#
+#  def self.resource_title( t)
+#    @@resource_title = t
+#  end
+
 
   # Remember state parameter for Oauth2
   def change_session_bb_state

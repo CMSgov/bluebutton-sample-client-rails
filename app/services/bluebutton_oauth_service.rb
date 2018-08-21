@@ -112,8 +112,7 @@ class BluebuttonOauthService
     JSON.parse(response_json)
   end
 
-  # GET for full url's referenced in JSON response ("link") for paging.
-  def bb_get_page(url)
+  def get_resource(url)
     response_json = @access_token.get(url).body
     JSON.parse(response_json)
   end

@@ -7,7 +7,7 @@ development:
   BB_CLIENT_ID: "<enter client id here>"
   BB_CLIENT_SECRET: "<enter client secret here>"
   # Callback handler URL:
-  BB_REDIRECT_URI: "http://localhost:3000/bluebutton_callback"
+  BB_REDIRECT_URI: "http://localhost:3000/bluebutton/callback"
   # Authorization endpoint:
   BB_AUTHORIZE_URL: "https://sandbox.bluebutton.cms.gov/v1/o/authorize/"
   # Exchange code for Token endpoint:
@@ -18,7 +18,7 @@ development:
 production:
   BB_CLIENT_ID: "<enter client id here>"
   BB_CLIENT_SECRET: "<enter client secret here>"
-  BB_REDIRECT_URI: "http://localhost:3000/bluebutton_callback"
+  BB_REDIRECT_URI: "http://localhost:3000/bluebutton/callback"
   BB_AUTHORIZE_URL: ""
   BB_TOKEN_URL: ""
   BB_BASE_URL: ""
@@ -26,7 +26,7 @@ production:
 test:
   BB_CLIENT_ID: "<enter client id here>"
   BB_CLIENT_SECRET: "<enter client secret here>"
-  BB_REDIRECT_URI: "http://localhost:3000/bluebutton_callback"
+  BB_REDIRECT_URI: "http://localhost:3000/bluebutton/callback"
   BB_AUTHORIZE_URL: ""
   BB_TOKEN_URL: ""
   BB_BASE_URL: ""
