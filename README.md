@@ -35,6 +35,13 @@ On RedHat this would be:
 
     yum install docker-compose
 
+If you are using a Windows operating system, you will need to setup port-forwarding for [Docker](https://www.docker.com/) virtual machine running under [VirtualBox](https://www.virtualbox.org/). This will enable you to access it via localhost.
+
+  1. Open the VirtualBox manager.
+  2. Select the Docker VM image (default)
+  3. Open settings -> network -> advanced -> port forwarding
+  4. Add a new forwarded port with Name = "BB-Rails", Host_IP = "127.0.0.1", Host_Port = "3000", and Guest_Port = "3000".
+  5. Double-click the "Docker Quickstart terminal" on your desktop. This will startup needed components and give you a command shell for later commands in this README.
 
 ## Clone the Repository
 
