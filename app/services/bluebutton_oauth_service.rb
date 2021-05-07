@@ -20,8 +20,7 @@ class BluebuttonOauthService
       :token_url => BB_TOKEN_URL,
       :site => BB_BASE_URL,
       :state => state,
-      :raise_errors => false,
-      :ssl => {verify: true}
+      :raise_errors => false
     })
   end
 
